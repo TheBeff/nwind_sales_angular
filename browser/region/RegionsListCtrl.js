@@ -9,6 +9,14 @@ angular.module('app')
   		  .catch($log.error);
   	};
 
+  	$scope.destroy = function(region){
+  		RegionService.destroy(region)
+  		  .then(function(response){
+  		  	console.log('region has poofed');
+  		  })
+  		  .catch($log.error);
+  	};
+
   	RegionService.getAll()
   	  .then(function(result){
   	  	$scope.regions = result;

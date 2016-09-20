@@ -15,7 +15,15 @@ router.get('/', function(req, res, next){
 	  	res.send(result);
 	  })
 	  .catch(next);
+});
 
+router.delete('/:id', function(req, res, next){
+	salesPeople.destroy({where: {id: req.params.id}})
+	  .then(function(result){
+	  	console.log("Sales person GONE");
+	  	res.sendStatus(204);
+	  })
+	  .catch(next);
 });
 
 module.exports = router;

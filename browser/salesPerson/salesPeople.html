@@ -6,5 +6,8 @@
 </div>
 
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="salesPerson in salesPeople">{{salesPerson.name}}</li>
+  <li class="list-group-item" ng-repeat="salesPerson in salesPeople">{{ salesPerson.name }}
+    <button class="btn btn-danger pull-right" ng-click="destroy(salesPerson)">Delete</button>
+    <br clear="all">
+  </li>
 </ul>

@@ -9,6 +9,14 @@ angular.module('app')
   		  .catch($log.error);
   	};
 
+  	$scope.destroy = function(salesPerson){
+  		SalesPersonService.destroy(salesPerson)
+  		  .then(function(result){
+  		  	console.log("Sales person deleted");
+  		  })
+  		  .catch($log.error);
+  	};
+
   	SalesPersonService.getAll()
   	  .then(function(result){
   	  	$scope.salesPeople = result;

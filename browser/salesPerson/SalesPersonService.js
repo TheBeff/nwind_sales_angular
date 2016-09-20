@@ -19,5 +19,12 @@ angular.module('app')
   		  });
   	};
 
+  	SalesPersonService.destroy = function(salesPerson){
+  		return $http.delete('/api/salesPeople/' + salesPerson.id)
+  		  .then(function(response){
+  		  	_salesPeople.splice(_salesPeople.indexOf(salesPerson), 1);
+  		  })
+  	};
+
   	return SalesPersonService;
   });

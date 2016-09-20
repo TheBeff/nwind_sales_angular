@@ -18,6 +18,13 @@ angular.module('app')
   		  	return _regions; 
   		  });
   	};
+
+  	RegionService.destroy = function(region){
+  		return $http.delete('/api/regions/' + region.id)
+  		  .then(function(response){
+  		  	_regions.splice(_regions.indexOf(region), 1);
+  		  })
+  	};
   	
   	return RegionService;
   });
