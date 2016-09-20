@@ -10,7 +10,7 @@ var SalesPeople = db.define('salesPeople', {
 });
 
 function sync(){
-	return db.sync({force: true});
+	return db.sync();
 }
 
 module.exports = {

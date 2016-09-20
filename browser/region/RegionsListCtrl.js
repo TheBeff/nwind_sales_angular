@@ -20,7 +20,6 @@ angular.module('app')
   	RegionService.getAll()
   	  .then(function(result){
   	  	$scope.regions = result;
-  	  	console.log($scope.regions);
   	  })
   	  .catch($log.error);
   });
