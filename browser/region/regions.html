@@ -1,1 +1,10 @@
-test
+<div class="well">
+  <div class="form-group">
+    <input class="form-control" ng-model="zip" placeholder="region zip code"/>
+  </div>
+  <button class="btn btn-primary" ng-click="create()" ng-disabled=!zip>Create Region</button>
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="region in regions">{{ region.zip }}</li>
+</ul>

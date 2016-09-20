@@ -1,17 +1,21 @@
 angular.module('app')
-  .config(function($stateProvider ){
+  .config(function($stateProvider, $urlRouterProvider){
   	$stateProvider.state('regionsView', {
   		url: '/regions',
-  		templateURL: './region/regions.html'
+  		templateUrl: '/region/regions.html',
+  		controller: 'RegionsListCtrl'
   	});
-  	
+
   	$stateProvider.state('salesPeopleView', {
   		url: '/salesPeople',
-  		templateURL: '/salesPerson/salesPeople.html'
+  		templateUrl: '/salesPerson/salesPeople.html',
+  		controller: 'SalesPersonCtrl'
   	});
   	
   	$stateProvider.state('homePage', {
   		url: '/',
-  		templateURL: './home.html'
+  		templateUrl: './home.html'
   	});
+
+  	$urlRouterProvider.otherwise('/');
   });

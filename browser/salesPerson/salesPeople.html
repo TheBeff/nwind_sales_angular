@@ -1,1 +1,10 @@
-salesPeople test
+<div class="well">
+  <div class="form-group">
+    <input class="form-control" ng-model="name" placeholder="sales person name"/>
+  </div>
+  <button class="btn btn-primary" ng-disabled=!name ng-click="create()">Create Sales Person</button> 
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="salesPerson in salesPeople">{{salesPerson.name}}</li>
+</ul>
