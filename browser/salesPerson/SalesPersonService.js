@@ -1,7 +1,7 @@
 angular.module('app')
   .factory('SalesPersonService', function($http){
 
-  	var SalesPersonService = {}
+  	var SalesPersonService = {};
   	var _salesPeople = [];
 
   	SalesPersonService.create = function(name){

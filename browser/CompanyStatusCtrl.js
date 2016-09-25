@@ -1,14 +1,17 @@
 angular.module('app')
-  .controller('CompanyStatusCtrl', function($scope, $log, RegionService, SalesPersonService){
-  	
-	RegionService.getAll()
-	  .then(function(result){
-	  	$scope.numRegions = result.length;
-	  	console.log($scope.numRegions);
-	  })
-	  .catch($log.error);
-
-	// SalesPersonService.getAll()
-	//   .then()
-
+  .controller('CompanyStatusCtrl', function($scope, $log, SalesPersonService, RegionService){
+    SalesPersonService.getAll()
+      .then(function(salesPeople){
+        $scope.salesPeople = salesPeople;
+      })
+      .catch(function(err){
+        console.log(err);
+      });
+    RegionService.getAll()
+      .then(function(regions){
+        $scope.regions = regions;
+      })
+      .catch(function(err){
+        console.log(err);
+      });
   });

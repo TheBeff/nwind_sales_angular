@@ -3,16 +3,16 @@ var Region = require('../db/index.js').models.Regions;
 
 router.post('/', function(req, res, next){
 	Region.create({zip: req.body.zip})
-	  .then(function(result){
-	  	res.send(result);
+	  .then(function(region){
+	  	res.send(region);
 	  })
 	  .catch(next);
 });
 
 router.get('/', function(req, res, next){
 	Region.findAll({where: {}})
-	  .then(function(result){
-	  	res.send(result);
+	  .then(function(regions){
+	  	res.send(regions);
 	  })
 	  .catch(next);
 });

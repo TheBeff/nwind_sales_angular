@@ -21,8 +21,8 @@
 		 </ul>
 		 <div ng-controller="CompanyStatusCtrl">
 		   <ul class="list-group">
-		     <li class="list-group-item">We have X sales people!</li>
-		     <li class="list-group-item">We have {{ numRegions }} regions!</li>
+         <li class="list-group-item">We have {{ salesPeople.length}} sales people!</li>
+		     <li class="list-group-item">We have {{ regions.length }} regions!</li>
 		   </ul>
 		 </div>
 		 <ui-view></ui-view>

@@ -1,11 +1,14 @@
 const server = require('http').createServer(require('./app'));
 const db = require('./db/index');
 
-db.sync()
-  .then(function(){
-  	console.log('tables created')
-  });
+if(process.env.SYNC){
+  db.sync()
+    .then(function(){
+      console.log('tables created');
+    });
+}
   
-server.listen(process.env.PORT, function(){
-	console.log("Listening on port: " + process.env.PORT);
+const port = process.env.PORT || 3000;
+server.listen(port, function(){
+	console.log("Listening on port: " + port);
 });

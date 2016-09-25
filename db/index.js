@@ -1,13 +1,9 @@
 const Sequelize = require("sequelize");
-const db = new Sequelize("postgres://localhost/acme_angular", {logging: false});
+const db = require('./_db'); 
 
-var Regions = db.define('regions', {
-	zip: Sequelize.INTEGER
-});
-
-var SalesPeople = db.define('salesPeople', {
-	name: Sequelize.STRING
-});
+//make these singular- TODO
+const Regions = require('./regions');
+const SalesPeople = require('./salesPeople');
 
 function sync(){
 	return db.sync();

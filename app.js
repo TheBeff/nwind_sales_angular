@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'browser')));
 app.use(bodyParser.json());
 
 app.get('/', function(req, res, next){
-	res.render('index');
+	res.sendFile( path.join(__dirname, 'views', 'index.html'));
 });
 
 app.use('/api/regions', require('./routes/regions.js'));
